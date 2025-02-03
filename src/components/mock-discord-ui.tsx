@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react"
 import { Icons } from "./icons"
-import { Inbox, PlusCircle, UserCircle } from "lucide-react"
+import { Cog, Headphones, Inbox, Mic, PlusCircle, UserCircle } from "lucide-react"
 import Image from "next/image"
 
 export const MockDiscordUI = ({ children }: PropsWithChildren) => {
@@ -56,12 +56,43 @@ export const MockDiscordUI = ({ children }: PropsWithChildren) => {
             </h3>
 
             <div className="flex items-center px-2 py-1.5 rounded bg-[#393c43] text-white cursor-pointer">
-
-                    <Image src="/brand-asset-profile-picture.png" alt="PingPanda Avatar"
-                     width={32}
-                     height={32}
-                     className="object-cover rounded-full mr-3" />
+              <Image
+                src="/brand-asset-profile-picture.png"
+                alt="PingPanda Avatar"
+                width={32}
+                height={32}
+                className="object-cover rounded-full mr-3"
+              />
             </div>
+
+            <span className="font-medium">PingPanda</span>
+
+            <div className="my-1 space-y-px">
+              {[...Array(4)].map((_, i) => (
+                <div
+                  key={i}
+                  className=" flex items-center px-2 py-1.5 rounded text-gray-600 cursor-not-allowed"
+                >
+                  <div className="size-8 rounded-full bg-discord-background mr-3" />
+                  <span className="font-medium">User {i + 1}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="p-2 bg-[#292b2f] flex items-center">
+          <div className="size-8 rounded-full bg-brand-700 mr-2" />
+          <div className="flex-1">
+            <p className="text-sm font-medium text-white">Yiu</p>
+            <p className="text-xs text-[#b9bbbe] flex items-center">
+              @your_account
+            </p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Mic className="size-5 text-[#b9bbbe] hover:text-white cursor-pointer" />
+            <Headphones className="size-5 text-[#b9bbbe] hover:text-white cursor-pointer" />
+            <Cog className="size-5 text-[#b9bbbe] hover:text-white cursor-pointer" />
           </div>
         </div>
       </div>
