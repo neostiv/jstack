@@ -80,13 +80,14 @@ const Page = () => {
                     avatarSrc="/brand-asset-profile-picture.png"
                     avatarAlt="PingPanda Avatar"
                     username="PeeeengPanda"
-                    timestamp="today at 12:35PM"
-                    badgeText="SignUp"
-                    badgeColor="#43b581"
-                    title="🤑 New User Sign Up & Make Money"
+                    timestamp="today at 13:15PM"
+                    badgeText="Revenue"
+                    badgeColor="#faa61a"
+                    title="🍑 Payment Received"
                     content={{
-                      name: "Felixito Te felicito",
-                      email: "raizafelixtobias1ro2do@gmail.com",
+                      amount: "$49.00",
+                      email: "jeremyitsonfire@gmail.com",
+                      plan: "PRO"
                     }}
                   />
                 </AnimatedList>
