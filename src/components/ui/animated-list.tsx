@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react"
 import React, {
   ComponentPropsWithoutRef,
   ReactNode,
   useEffect,
   useMemo,
   useState,
-} from "react";
+} from "react"
 
 export function AnimatedListItem({ children }: { children: React.ReactNode }) {
   const animations = {
@@ -15,41 +15,39 @@ export function AnimatedListItem({ children }: { children: React.ReactNode }) {
     animate: { scale: 1, opacity: 1, originY: 0 },
     exit: { scale: 0, opacity: 0 },
     transition: { type: "spring", stiffness: 350, damping: 40 },
-  };
+  }
 
   return (
     <motion.div {...animations} layout className="mx-auto w-full">
       {children}
     </motion.div>
-  );
+  )
 }
 
 export interface AnimatedListProps extends ComponentPropsWithoutRef<"div"> {
-  children: React.ReactNode;
-  delay?: number;
+  children: React.ReactNode
+  delay?: number
 }
 
 export const AnimatedList = React.memo(
   ({ children, className, delay = 1000, ...props }: AnimatedListProps) => {
-   const [messages, setMessages] = useState<ReactNode[]>([])
-   const childrenArray = React.Children.toArray(children)
-
+    const [messages, setMessages] = useState<ReactNode[]>([])
+    const childrenArray = React.Children.toArray(children)
 
     useEffect(() => {
-       const interval =setInterval(() =>{
-        if(messages.length < childrenArray.length){
+      const interval = setInterval(() => {
+        if (messages.length < childrenArray.length) {
           setMessages((prev) => [childrenArray[messages.length], ...prev])
         } else {
           clearInterval(interval)
         }
-       }, delay)
-       return () => clearInterval(interval)
+      }, delay)
+      return () => clearInterval(interval)
     }, [childrenArray, delay, messages.length])
-
 
     return (
       <div
-        className={`flex flex-col items-center gap-4 ${className}`}
+        className={`flex flex-col-reverse items-center gap-4 ${className}`}
         {...props}
       >
         <AnimatePresence>
@@ -60,8 +58,8 @@ export const AnimatedList = React.memo(
           ))}
         </AnimatePresence>
       </div>
-    );
-  },
-);
+    )
+  }
+)
 
-AnimatedList.displayName = "AnimatedList";
+AnimatedList.displayName = "AnimatedList"

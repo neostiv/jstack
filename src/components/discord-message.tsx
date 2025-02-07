@@ -61,7 +61,7 @@ export const DiscordMessage = ({
         </div>
 
         <div className="bg-[#2f3136] text-sm w-full rounded p-3 mb-4 mt-1.5">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+          <div className="flex flex-row  items-center justify-between mb-2">
             {badgeText ? (
               <span
                 className={cn(
@@ -83,10 +83,8 @@ export const DiscordMessage = ({
             </p>
           ))}
 
-
-
           <p className=" text-[#72767d] text-xs mt-2 flex items-center">
-            <Clock className="size-3 mr-1"  />
+            <Clock className="size-3 mr-1" />
             {timestamp}
           </p>
         </div>

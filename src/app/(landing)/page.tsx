@@ -87,7 +87,20 @@ const Page = () => {
                     content={{
                       amount: "$49.00",
                       email: "jeremyitsonfire@gmail.com",
-                      plan: "PRO"
+                      plan: "PRO",
+                    }}
+                  />
+                  <DiscordMessage
+                    avatarSrc="/brand-asset-profile-picture.png"
+                    avatarAlt="PingPanda Avatar"
+                    username="PeeeengPanda"
+                    timestamp="today at 18:15"
+                    badgeText="Milestone"
+                    badgeColor="#5865f2"
+                    title="🚀 Revenue Milestone Achieved"
+                    content={{
+                      recurringRevenue: "$5.000 USD",
+                      grow: "+8.2%",
                     }}
                   />
                 </AnimatedList>
