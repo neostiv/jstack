@@ -1,6 +1,6 @@
 import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
-import { Check } from "lucide-react"
+import { Check, Star } from "lucide-react"
 import { ShinyButton } from "@/components/shiny-button"
 import { MockDiscordUI } from "@/components/mock-discord-ui"
 import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list"
@@ -8,6 +8,7 @@ import { DiscordMessage } from "@/components/discord-message"
 import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
+import { Icons } from "@/components/icons"
 
 const Page = () => {
   const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
@@ -277,7 +278,98 @@ const Page = () => {
           </div>
         </MaxWidthWrapper>
       </section>
-      <section></section>
+      <section className="relative py-24 sm:py-32 bg-white">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+          <div>
+            <h2 className="text-center text-base/7 font-semibold text-brand-600">
+              Real Word Experiences
+            </h2>
+            <Heading className="text-center">
+              What Our Customers Are saying
+            </Heading>
+          </div>
+          {""}
+          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:gridcols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+            {/*First Customer Review */}
+            <div className="flex flex-auto flex-col gap-4 bg-brand-25 p-6 sm:p-8 lg:p-16 rounded-t-[2rem] lg:rounded-tr-none lg:rounded-l-[2rem]">
+              <div className="flex gap-0.5 mb-2 justify-center lg:justify-start">
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+              </div>
+
+              <p className="text-base sm:text-lg lg:text-lg/8 font-medium trackcing-tight text-brand-950 text-center lg:text-left text-pretty">
+                Peeeng Pand makes me think about how silly pandas are and
+                they&apos;re still alive but hey that&apos;s not the case with
+                this SaaS I actually been able to get notifications on-the-spot
+                when a sale is made, its really good.
+              </p>
+
+              <div className="flex flex-col justify-center lg:justify-start sm:flex-row items-center sm:items-start gap-4 mt-2">
+                <Image
+                  src="/user-2.png"
+                  className="rounded-full object-cover"
+                  alt="Random User"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="font-semibold flex items-center">
+                    {" "}
+                    Nicole Tatiana
+                    <Icons.verificationBadge className="size-4 inline-block ml-1.5" />
+                  </p>
+                  <p className="text-sm text-gray-700">@ImmNicole</p>
+                </div>
+              </div>
+            </div>
+
+            {/*Second Customer Review */}
+            <div className="flex flex-auto flex-col gap-4 bg-brand-25 p-6 sm:p-8 lg:p-16 rounded-b-[2rem] lg:rounded-bl-none lg:rounded-r-[2rem]">
+              <div className="flex gap-0.5 mb-2 justify-center lg:justify-start">
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+              </div>
+
+              <p className="text-base sm:text-lg lg:text-lg/8 font-medium trackcing-tight text-brand-950 text-center lg:text-left text-pretty">
+                Peeeng Panda's been helping to create revenue maximize profits
+                hope stays like that 4eva!
+              </p>
+
+              <div className="flex flex-col justify-center lg:justify-start sm:flex-row items-center sm:items-start gap-4 mt-2">
+                <Image
+                  src="/user-1.png"
+                  className="rounded-full object-cover"
+                  alt="Random User"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="font-semibold flex items-center">
+                    {" "}
+                    Jordy Marshellow
+                    <Icons.verificationBadge className="size-4 inline-block ml-1.5" />
+                  </p>
+                  <p className="text-sm text-gray-700">@JoursMarhsmellow</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ShinyButton
+          href="/sign-up"
+          className="relative z-10 h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+        >
+          Start for Free Today Right Now!
+        </ShinyButton>
+        </MaxWidthWrapper>
+
+        
+      </section>
       <section></section>
     </>
   )
