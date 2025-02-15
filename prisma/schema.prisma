@@ -11,11 +11,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+enum Plan {
+  FREE
+  PRO
+}
 
-  @@index([name])
+model User {
+  id         String  @id @default(cuid())
+  externalId String? @unique
+
+  quotaLimit Int
+  plan       Plan @default(FREE)
+
+  email  String @unique
+  apiKey String @unique
 }
