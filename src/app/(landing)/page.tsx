@@ -337,7 +337,7 @@ const Page = () => {
               </div>
 
               <p className="text-base sm:text-lg lg:text-lg/8 font-medium trackcing-tight text-brand-950 text-center lg:text-left text-pretty">
-                Peeeng Panda's been helping to create revenue maximize profits
+                Peeeng Panda&apos;s been helping to create revenue maximize profits
                 hope stays like that 4eva!
               </p>
 
