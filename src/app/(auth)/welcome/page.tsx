@@ -1,19 +1,29 @@
 //esta pagina sincroniza los estados de autenticación a la base de dardos
 
 import { LoadingSpinner } from "@/components/loading-spinner"
-import { Heading, LucideProps } from "lucide-react"
+import { LucideProps } from "lucide-react"
+import { Heading } from "@/components/heading"
+import { useQuery } from "@tanstack/react-query"
+import { client } from "@/lib/client"
 
 const Page = () => {
+
+  const {} = useQuery ({
+    queryFn: () => {
+      client
+    }})
+
   return (
     <div className="flex w-full flex-1 items-center justify-center px-4">
       <BackgroundPattern className="absolute inset-0 left-1/2 z-0-translate-x-1/2 opacity-75" />
+
       <div className="relative z-10 flex -translate-y-1/2 flex-col items-center gap-6 text-center">
         <LoadingSpinner size="md" />
+        <Heading>Creating your account...</Heading>
+        <p className="text-base/7 text-gray-600 max-w-prose">
+          Un momento per favore... we are creando dis for ya{" "}
+        </p>
       </div>
-      <Heading>Creating your account...</Heading>
-      <p className="text-base/7 text-gray-600 max-w-prose">
-        Un momento per favore... we are creando dis for ya{" "}
-      </p>
     </div>
   )
 }
